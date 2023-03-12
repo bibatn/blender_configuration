@@ -1,7 +1,9 @@
 import os
-with open('sea_urchin.txt', 'r') as data:
+import sys
+
+with open(sys.argv[1], 'r') as data:
   plaintext = data.read()
 
 plaintext = plaintext.replace(',', ' ')
-with open('sea_urchin_.txt', 'w') as f:
+with open(sys.argv[1][:-4]+'.pcd', 'w') as f:
     f.write(plaintext)
